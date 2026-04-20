@@ -209,3 +209,7 @@ __marimo__/
 # Sample Code
 2nd_stepUP_competition/
 
+# Local data
+*.npy
+*.memmap
+
