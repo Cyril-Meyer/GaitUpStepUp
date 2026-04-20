@@ -213,3 +213,6 @@ __marimo__/
 *.npy
 *.memmap
 
+# Submissions
+submission_*.zip
+
