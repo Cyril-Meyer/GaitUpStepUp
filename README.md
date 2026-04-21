@@ -11,3 +11,15 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 003   | 41.96 | alternative to 002-1 where left and right foot are merged earlier than cosine |
 | 004   | 21.08 | add check between ref and probe pair instead of just probe to all ref |
 | 005   | 22.03 | as 004 but different ref/probe checking not using average embed but best match |
+| 006   | 22.87 | 004 with minmax-normalization (best model) |
+| 007   | 23.40 | 005 with minmax-normalization (best model) |
+| 008   | 21.92 | 004 with minmax-normalization (last model) |
+
+### Next things
+* Classif pairs ?
+* Use ref in train ?
+* Check par candidat ++ ?
+
+### Uncertainty
+
+For submission 001 to 005, model should be best on the valid set but not sure 100% it was not the last epoch model.
