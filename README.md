@@ -15,6 +15,7 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 007   | 23.40 | 005 with minmax-normalization (best model) |
 | 008   | 21.92 | 004 with minmax-normalization (last model) |
 | 009   | 21.75 | 004 with model 021 (ref data) |
+| 010   | 21.69 | 004 with model 031 |
 
 ## Models
 
@@ -23,6 +24,7 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 001 | Inception 1D | None, None, 3000 | 32        | log  | |
 | 011 | Inception 1D | None, None, 3000 | 32        | minmax  | |
 | 021 | Inception 1D | None, None, 3000 | 32        | log  | use ref for train |
+| 031 | Conv2D encoder + Inception 1D | None, None, 75, 40, 1 | 32 | log | |
 
 ### Next things
 * Less dumb architecture...
