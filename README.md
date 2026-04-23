@@ -18,6 +18,14 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 010   | 21.69 | 004 with model 031 |
 | 011   | 22.16 | 004 with model 041 best |
 | 012   | 21.15 | 004 with model 041 last |
+| 013   | 17.89 | model 001 but norm on claim per class |
+| 014   | 17.00 | 013 mais medoid + filtre valeur "aberantes" sur les proto |
+| 015   | 18.92 | model 001 like 013 but zt-norm |
+| 016   |       | |
+| 017   |       | |
+| 018   |       | |
+| 019   |       | |
+| 020   |       | |
 
 
 * normalization
