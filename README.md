@@ -16,6 +16,17 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 008   | 21.92 | 004 with minmax-normalization (last model) |
 | 009   | 21.75 | 004 with model 021 (ref data) |
 | 010   | 21.69 | 004 with model 031 |
+| 011   | 22.16 | 004 with model 041 best |
+| 012   | 21.15 | 004 with model 041 last |
+
+
+* normalization
+  * lognorm seems to work a little better than minmax
+* model selection
+  * last model seems to perform better than best model on validation
+* model architecture
+  * surprisingly, model with encoder architecture do not perform better than simple 1D model with flatten image input
+
 
 ## Models
 
@@ -25,9 +36,10 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 011 | Inception 1D | None, None, 3000 | 32        | minmax  | |
 | 021 | Inception 1D | None, None, 3000 | 32        | log  | use ref for train |
 | 031 | Conv2D encoder + Inception 1D | None, None, 75, 40, 1 | 32 | log | |
+| 041 | Conv2D encoder + Inception 1D | None, None, 75, 40, 1 | 32 | log | other encoder see src |
 
 ### Next things
-* Less dumb architecture...
+
 * Classif pairs ?
 * Use ref in train ?
 * Check par candidat ++ ?

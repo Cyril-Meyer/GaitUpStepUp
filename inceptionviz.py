@@ -21,6 +21,37 @@ def frame_encoder():
 
     return tf.keras.Model(inp, x)
 
+def frame_encoder_v2():
+    inp = tf.keras.layers.Input(shape=(75, 40, 1))
+
+    x = tf.keras.layers.Conv2D(16, 3, padding="valid")(inp)
+    x = tf.keras.layers.BatchNormalization()(x)
+    x = tf.keras.layers.ReLU()(x)
+
+    x = tf.keras.layers.Conv2D(16, 3, strides=2, padding="valid")(x)
+    x = tf.keras.layers.BatchNormalization()(x)
+    x = tf.keras.layers.ReLU()(x)
+
+    x = tf.keras.layers.Conv2D(32, 3, padding="valid")(x)
+    x = tf.keras.layers.BatchNormalization()(x)
+    x = tf.keras.layers.ReLU()(x)
+
+    x = tf.keras.layers.Conv2D(32, 3, strides=2, padding="valid")(x)
+    x = tf.keras.layers.BatchNormalization()(x)
+    x = tf.keras.layers.ReLU()(x)
+
+    x = tf.keras.layers.Conv2D(64, 3, padding="valid")(x)
+    x = tf.keras.layers.BatchNormalization()(x)
+    x = tf.keras.layers.ReLU()(x)
+
+    x = tf.keras.layers.Conv2D(64, 3, strides=2, padding="valid")(x)
+    x = tf.keras.layers.BatchNormalization()(x)
+    x = tf.keras.layers.ReLU()(x)
+
+    x = tf.keras.layers.Flatten()(x)
+
+    return tf.keras.Model(inp, x)
+
 def inception_module(input_tensor, stride=1, activation='linear', nb_filters=32, use_residual=True, use_bottleneck=True, bottleneck_size=32, depth=6, kernel_size=41):
     if use_bottleneck and int(input_tensor.shape[-1]) > bottleneck_size:
         input_inception = tf.keras.layers.Conv1D(filters=bottleneck_size, kernel_size=1,
@@ -62,10 +93,13 @@ def shortcut_layer(input_tensor, output_tensor):
 
 
 def get_model(n_classes=32, input_shape=(None, 75, 40, 1), reduce=[tf.keras.layers.GlobalAveragePooling1D()],
-              nb_filters=32, use_residual=True, use_bottleneck=True, depth=6, kernel_size=41):
+              nb_filters=32, use_residual=True, use_bottleneck=True, depth=6, kernel_size=41, encoder_version=1):
     input_layer = tf.keras.layers.Input(input_shape)
 
-    encoder = frame_encoder()
+    if encoder_version == 2:
+        encoder = frame_encoder_v2()
+    else:
+        encoder = frame_encoder()
 
     x = tf.keras.layers.TimeDistributed(encoder)(input_layer)
     
