@@ -19,10 +19,11 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 011   | 22.16 | 004 with model 041 best |
 | 012   | 21.15 | 004 with model 041 last |
 | 013   | 17.89 | model 001 but norm on claim per class |
-| 014   | 17.00 | 013 mais medoid + filtre valeur "aberantes" sur les proto |
+| 014   | **17.00** | 013 mais medoid + filtre valeur "aberantes" sur les proto |
 | 015   | 18.92 | model 001 like 013 but zt-norm |
-| 016   |       | |
-| 017   |       | |
+| 016   | 17.28 | 014 with model 002 last |
+| 017   | 19.09 | 014 with model 003 800 |
+| 017-2 | 19.09 | 017 with different threshold (checking threshold useless for EER) |
 | 018   |       | |
 | 019   |       | |
 | 020   |       | |
@@ -41,6 +42,8 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | N°  | Architecture | Input shape      | BatchSize | Norm | More ? |
 |:----|:-------------|:-----------------|:----------|:-----|:-------|
 | 001 | Inception 1D | None, None, 3000 | 32        | log  | |
+| 002 | Inception 1D | None, None, 3000 | 32        | log  | same as 001 but know have best and last |
+| 003 | Inception 1D | None, None, 3000 | 32        | log  | same as 002 but with much more epoch (+/- 800 epochs with checkpoint every 100 epoch, it crashed between 800 and 900) |
 | 011 | Inception 1D | None, None, 3000 | 32        | minmax  | |
 | 021 | Inception 1D | None, None, 3000 | 32        | log  | use ref for train |
 | 031 | Conv2D encoder + Inception 1D | None, None, 75, 40, 1 | 32 | log | |
@@ -48,6 +51,8 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 
 ### Next things
 
+* Triplet like loss or unsupervised approach
+* force different person but same shoe like to be distant in embeding : use shoe class and speed as something to ignore in embeding
 * Classif pairs ?
 * Use ref in train ?
 * Check par candidat ++ ?
