@@ -51,6 +51,12 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 
 ### Next things
 
+Triplet loss can be like :
+* anchor Person_x, Shoe_y, Speed_z
+* positive Person_x, Shoe_?, speed_?
+* negative Person_?, Shoe_y, Speed_z
+This should force shoe and speed to be ignored.
+
 * Triplet like loss or unsupervised approach
 * force different person but same shoe like to be distant in embeding : use shoe class and speed as something to ignore in embeding
 * Classif pairs ?
