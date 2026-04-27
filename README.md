@@ -19,12 +19,12 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 011   | 22.16 | 004 with model 041 best |
 | 012   | 21.15 | 004 with model 041 last |
 | 013   | 17.89 | model 001 but norm on claim per class |
-| 014   | **17.00** | 013 mais medoid + filtre valeur "aberantes" sur les proto |
+| 014   | 17.00 | 013 mais medoid + filtre valeur "aberantes" sur les proto |
 | 015   | 18.92 | model 001 like 013 but zt-norm |
 | 016   | 17.28 | 014 with model 002 last |
 | 017   | 19.09 | 014 with model 003 800 |
 | 017-2 | 19.09 | 017 with different threshold (checking threshold useless for EER) |
-| 018   |       | |
+| 018   | **13.20**  | model 052, method 014 |
 | 019   |       | |
 | 020   |       | |
 
@@ -48,6 +48,8 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 021 | Inception 1D | None, None, 3000 | 32        | log  | use ref for train |
 | 031 | Conv2D encoder + Inception 1D | None, None, 75, 40, 1 | 32 | log | |
 | 041 | Conv2D encoder + Inception 1D | None, None, 75, 40, 1 | 32 | log | other encoder see src |
+| 051 | Inception 1D | None, None, 3000 | 32        | log  | triplet loss (not good batch generated, fast try) |
+| 052 | Inception 1D | None, None, 3000 | 32        | log  | 051 with a fixed lambda |
 
 ### Next things
 
