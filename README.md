@@ -24,9 +24,9 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 016   | 17.28 | 014 with model 002 last |
 | 017   | 19.09 | 014 with model 003 800 |
 | 017-2 | 19.09 | 017 with different threshold (checking threshold useless for EER) |
-| 018   | **13.20**  | model 052, method 014 |
-| 019   |       | |
-| 020   |       | |
+| 018   | 13.20 | model 052, method 014 |
+| 019   | **12.27**      | model 053, method 014 |
+| 020   |       | model 054, method 014 |
 
 
 * normalization
@@ -50,6 +50,8 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 041 | Conv2D encoder + Inception 1D | None, None, 75, 40, 1 | 32 | log | other encoder see src |
 | 051 | Inception 1D | None, None, 3000 | 32        | log  | triplet loss (not good batch generated, fast try) |
 | 052 | Inception 1D | None, None, 3000 | 32        | log  | 051 with a fixed lambda |
+| 053 | Inception 1D | None, None, 3000 | 32        | log  | contrastive loss |
+| 054 | Inception 1D | None, None, 3000 | 32        | log  | contrastive loss larger batch size ? |
 
 ### Next things
 
