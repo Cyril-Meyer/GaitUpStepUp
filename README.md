@@ -29,6 +29,8 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 020   | 16.64 | model 054, method 014 |
 | 021   | 14.52 | model 055 best, method 014 |
 | 022   | 14.48 | model 055 last, method 014 |
+| 023   | 19.48 | model 061 last, method 014 |
+| 024   |       | model 071 last, method 014 |
 
 
 * normalization
@@ -55,6 +57,8 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 053 | Inception 1D | None, None, 3000 | 32        | log  | contrastive loss |
 | 054 | Inception 1D | None, None, 3000 | 512       | log  | contrastive loss best of 83 epochs (crashes / reboot ?) |
 | 055 | Inception 1D | None, None, 3000 | 256       | log  | contrastive loss |
+| 061 | Inception 1D | None, None, 3000 | 32        | log  | gradient reversal |
+| 071 | Inception 1D | None, None, 3000 | 32        | log  | contrastive loss with 4 class batches |
 
 ### Next things
 
