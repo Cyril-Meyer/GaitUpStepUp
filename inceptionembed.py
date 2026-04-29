@@ -62,6 +62,7 @@ def get_model(n_classes=32, input_shape=(None, 1), reduce=[tf.keras.layers.Globa
     output_layer = tf.keras.layers.Dense(units=n_classes, activation='softmax')(concatenated)
 
     embed = tf.keras.layers.Lambda(lambda t: tf.math.l2_normalize(t, axis=1), output_shape=lambda input_shape: input_shape)(concatenated)
+    # embed = tf.keras.layers.UnitNormalization(axis=1)(concatenated)
 
     '''
     # todo idea : classifier wants separability, triplet wants geometry -> separate heads may help us ?
