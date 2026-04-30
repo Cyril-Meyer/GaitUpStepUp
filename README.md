@@ -25,12 +25,15 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 017   | 19.09 | 014 with model 003 800 |
 | 017-2 | 19.09 | 017 with different threshold (checking threshold useless for EER) |
 | 018   | 13.20 | model 052, method 014 |
-| 019   | **12.27** | model 053, method 014 |
+| 019   | 12.27 | model 053, method 014 |
 | 020   | 16.64 | model 054, method 014 |
 | 021   | 14.52 | model 055 best, method 014 |
 | 022   | 14.48 | model 055 last, method 014 |
 | 023   | 19.48 | model 061 last, method 014 |
-| 024   |       | model 071 last, method 014 |
+| 024   | 11.53 | model 071 last (300), method 014 |
+| 025   | **11.32** | model 071 200, method 014 |
+| 026   | 11.53 | model 071 100, method 014 |
+| 027   | 12.31 | model 071 best, method 014 |
 
 
 * normalization
