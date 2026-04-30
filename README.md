@@ -40,8 +40,12 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
   * lognorm seems to work a little better than minmax
 * model selection
   * last model seems to perform better than best model on validation
+  * 200 epoch seems to performe better than other when using contrastive loss
 * model architecture
   * surprisingly, model with encoder architecture do not perform better than simple 1D model with flatten image input
+* loss
+  * triplet / unsupervised loss work best even when using random batches
+  * better batches improve performance a little
 
 
 ## Models
@@ -62,6 +66,8 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 055 | Inception 1D | None, None, 3000 | 256       | log  | contrastive loss |
 | 061 | Inception 1D | None, None, 3000 | 32        | log  | gradient reversal |
 | 071 | Inception 1D | None, None, 3000 | 32        | log  | contrastive loss with 4 class batches |
+| 081 | Inception 1D | None, None, 6000 | 32        | log  | 071 but use pairs (pairs on channel) |
+| 091 | Inception 1D | None, None, 3000 | 32        | log  | 071 but use pairs (pairs on series length) |
 
 ### Next things
 
