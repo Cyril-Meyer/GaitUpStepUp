@@ -68,6 +68,7 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 071 | Inception 1D | None, None, 3000 | 32        | log  | contrastive loss with 4 class batches |
 | 081 | Inception 1D | None, None, 6000 | 32        | log  | 071 but use pairs (pairs on channel) |
 | 091 | Inception 1D | None, None, 3000 | 32        | log  | 071 but use pairs (pairs on series length) |
+| 101 | Inception 1D | None, None, 3000 | 32        | log  | best of 081 and 091 with Gaussian filter on the input |
 
 ### Next things
 
