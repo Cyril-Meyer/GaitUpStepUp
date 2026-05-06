@@ -34,6 +34,11 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 025   | **11.32** | model 071 200, method 014 |
 | 026   | 11.53 | model 071 100, method 014 |
 | 027   | 12.31 | model 071 best, method 014 |
+| 028   | 47.36 | error |
+| 028-2 |  | model 081 200, method 014 |
+| 029 | 22.36 | model 081 200, method 014 but reverted foots |
+| 030 | 13.92 | model 081 200, method 014 but reverted foots 2nd version |
+| 031 | 12.2O | model 081 150, method 014 |
 
 
 * normalization
@@ -66,7 +71,7 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 055 | Inception 1D | None, None, 3000 | 256       | log  | contrastive loss |
 | 061 | Inception 1D | None, None, 3000 | 32        | log  | gradient reversal |
 | 071 | Inception 1D | None, None, 3000 | 32        | log  | contrastive loss with 4 class batches |
-| 081 | Inception 1D | None, None, 6000 | 32        | log  | 071 but use pairs (pairs on channel) |
+| 081 | Inception 1D | None, None, 6000 | 32        | log  | 071 but use pairs (pairs on channel), 200+ epochs |
 | 091 | Inception 1D | None, None, 3000 | 32        | log  | 071 but use pairs (pairs on series length) |
 | 101 | Inception 1D | None, None, 3000 | 32        | log  | best of 081 and 091 with Gaussian filter on the input |
 
