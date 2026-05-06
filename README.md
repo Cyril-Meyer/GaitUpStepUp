@@ -38,7 +38,7 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 028-2 | bug | model 081 200, method 014, platform score bug |
 | 029 | 22.36 | model 081 200, method 014 but reverted foots |
 | 030 | 13.92 | model 081 200, method 014 but reverted foots 2nd version (flip footstep + also revert reference) |
-| 031 | 12.2O | model 081 150, method 014 |
+| 031 | 12.20 | model 081 150, method 014 |
 | 028-2 | 13.15 | model 081 200, method 014 |
 
 
@@ -75,7 +75,7 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 081 | Inception 1D | None, None, 6000 | 32        | log  | 071 but use pairs (pairs on channel), 200+ epochs |
 | 082 | Inception 1D | None, None, 6000 | 32        | log  | 071 but use pairs (pairs on channel), use all right foot |
 | 091 | Inception 1D | None, None, 3000 | 32        | log  | 071 but use pairs (pairs on series length) |
-| 101 | Inception 1D | None, None, 3000 | 32        | log  | best of 081 and 091 with Gaussian filter on the input |
+| 101 | Inception 1D | None, None, 3000 | 32        | log  | best of 081/082 and 091 with Gaussian filter on the input |
 
 ### Next things
 
