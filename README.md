@@ -34,11 +34,12 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 025   | **11.32** | model 071 200, method 014 |
 | 026   | 11.53 | model 071 100, method 014 |
 | 027   | 12.31 | model 071 best, method 014 |
-| 028   | 47.36 | error |
+| 028   | 47.36 | error in code |
 | 028-2 | bug | model 081 200, method 014, platform score bug |
 | 029 | 22.36 | model 081 200, method 014 but reverted foots |
-| 030 | 13.92 | model 081 200, method 014 but reverted foots 2nd version |
+| 030 | 13.92 | model 081 200, method 014 but reverted foots 2nd version (flip footstep + also revert reference) |
 | 031 | 12.2O | model 081 150, method 014 |
+| 028-2 | 13.15 | model 081 200, method 014 |
 
 
 * normalization
