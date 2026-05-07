@@ -31,7 +31,7 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 022   | 14.48 | model 055 last, method 014 |
 | 023   | 19.48 | model 061 last, method 014 |
 | 024   | 11.53 | model 071 last (300), method 014 |
-| 025   | **11.32** | model 071 200, method 014 |
+| 025   | 11.32 | model 071 200, method 014 |
 | 026   | 11.53 | model 071 100, method 014 |
 | 027   | 12.31 | model 071 best, method 014 |
 | 028   | 47.36 | error in code |
@@ -43,6 +43,9 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 032 | 12.59 | maxime 1, model 071? : baseline distances |
 | 033 | 11.39 | maxime 2, model 071? : online distances |
 | 034 | 12.93 | maxime 3, model 071? : baseline full manifold distances |
+| 035 | 12.03 | model 082 150, method 014 |
+| 036 | **10.16** | model 082 100, method 014 |
+| 037 |  | model 082 50, method 014 |
 
 
 * normalization
