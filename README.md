@@ -40,6 +40,9 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 030 | 13.92 | model 081 200, method 014 but reverted foots 2nd version (flip footstep + also revert reference) |
 | 031 | 12.20 | model 081 150, method 014 |
 | 028-2 | 13.15 | model 081 200, method 014 |
+| 032 | 12.59 | maxime 1, model 071? : baseline distances |
+| 033 | 11.39 | maxime 2, model 071? : online distances |
+| 034 | 12.93 | maxime 3, model 071? : baseline full manifold distances |
 
 
 * normalization
