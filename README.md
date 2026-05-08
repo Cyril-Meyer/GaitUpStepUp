@@ -40,12 +40,15 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 030 | 13.92 | model 081 200, method 014 but reverted foots 2nd version (flip footstep + also revert reference) |
 | 031 | 12.20 | model 081 150, method 014 |
 | 028-2 | 13.15 | model 081 200, method 014 |
-| 032 | 12.59 | maxime 1, model 071? : baseline distances |
-| 033 | 11.39 | maxime 2, model 071? : online distances |
-| 034 | 12.93 | maxime 3, model 071? : baseline full manifold distances |
+| 032 | 12.59 | maxime 1, model 071 : baseline distances |
+| 033 | 11.39 | maxime 2, model 071 : online distances |
+| 034 | 12.93 | maxime 3, model 071 : baseline full manifold distances |
 | 035 | 12.03 | model 082 150, method 014 |
-| 036 | **10.16** | model 082 100, method 014 |
-| 037 |  | model 082 50, method 014 |
+| 036 | 10.16 | model 082 100, method 014 |
+| 037 | **9.20** | model 082 50, method 014 |
+| 038 | 10.51 | maxime 4, model 071 + ??? |
+| 039 | 11.93 | maxime 5, model 071 + ??? |
+| 040 | 12.80 | model 072 200, method 014 |
 
 
 * normalization
@@ -78,16 +81,15 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 055 | Inception 1D | None, None, 3000 | 256       | log  | contrastive loss |
 | 061 | Inception 1D | None, None, 3000 | 32        | log  | gradient reversal |
 | 071 | Inception 1D | None, None, 3000 | 32        | log  | contrastive loss with 4 class batches |
-| 072 | Inception 1D | None, None, 3000 | 32        | log  | contrastive loss with 4 class batches, larger lambda weight |
+| 072 | Inception 1D | None, None, 3000 | 32        | log  | contrastive loss with 4 class batches, larger lambda weight 0.5, 200 epochs |
 | 081 | Inception 1D | None, None, 6000 | 32        | log  | 071 but use pairs (pairs on channel), 200+ epochs |
 | 082 | Inception 1D | None, None, 6000 | 32        | log  | 071 but use pairs (pairs on channel), use all right foot 260 epochs |
-| 091 | Inception 1D | None, None, 3000 | 32        | log  | 071 but use pairs (pairs on series length) |
+| 091 | Inception 1D | None, None, 3000 | 32        | log  | 071 but use pairs (pairs on series length), use all right foot |
 | 101 | Inception 1D | None, None, 3000 | 32        | log  | best of 081/082 and 091 with Gaussian filter on the input |
 
 ### Next things
 
 Todo
-* 072
 * 091
 * 101
 
