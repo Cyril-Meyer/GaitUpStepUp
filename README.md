@@ -52,6 +52,7 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 041 | 12.32 | maxime 6, model 071 + ??? |
 | 042 | 11.68 | model 091 50, method 014 |
 | 043 | 10.44 | model 091 100, method 014 |
+| 044 |  | model 101, method 014 |
 
 
 * normalization
@@ -88,12 +89,13 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 081 | Inception 1D | None, None, 6000 | 32        | log  | 071 but use pairs (pairs on channel), 200+ epochs |
 | 082 | Inception 1D | None, None, 6000 | 32        | log  | 071 but use pairs (pairs on channel), use all right foot 260 epochs |
 | 091 | Inception 1D | None, None, 3000 | 32        | log  | 071 but use pairs (pairs on series length), use all right foot |
-| 101 | Inception 1D | None, None, 3000 | 32        | log  | best of 081/082 and 091 with Gaussian filter on the input |
+| 101 | Inception 1D | None, None, 3000 | 32        | log  | 082 with Gaussian filter on the input (sigma = 0.5) |
+| 102 | Inception 1D | None, None, 3000 | 32        | log  | 082 with Gaussian filter on the input |
 
 ### Next things
 
 Todo
-* 101
+* 101 & 102
 
 Triplet loss can be like :
 * anchor Person_x, Shoe_y, Speed_z
