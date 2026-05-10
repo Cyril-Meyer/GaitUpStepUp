@@ -52,7 +52,8 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 041 | 12.32 | maxime 6, model 071 + ??? |
 | 042 | 11.68 | model 091 50, method 014 |
 | 043 | 10.44 | model 091 100, method 014 |
-| 044 |  | model 101, method 014 |
+| 044 | 10.89 | model 101 50, method 014 |
+| 045 | 10.83 | model 101 25, method 014 |
 
 
 * normalization
