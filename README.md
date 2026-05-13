@@ -1,6 +1,43 @@
 # GaitUpStepUp
 MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 
+The team is composed of [Maxime Devanne](https://github.com/maxwell1503) and myself [Cyril Meyer](https://github.com/Cyril-Meyer).
+
+We are both member of the [MSD](https://msd-irimas.github.io/) team within the [IRIMAS](https://www.irimas.uha.fr/) research institute.
+
+
+## TLDR I want to see the best submission method only
+
+* PrepData
+  * use export 1 for image video preprocessing
+  * export 4 `XId` dict is used during trainning for custom batches
+* TrainV4 with `X_AllStepsR_f32_norm` and concat on series channel
+* PredMax (TODO)
+
+
+## Notebooks explained
+
+* PrepData : from original data to easy to load numpy array
+  * Export 1 : export with log norm
+  * Export 2 : export with minmax norm
+  * Export 3 : 1 with metadata dictionary for custom batches
+  * Export 4 : export with L/R pairs and more metadata dictionary for custom batches
+  * Export 5 : export with gaussian filter try 1
+  * Export 6 : export with gaussian filter try 2
+* Train : train model
+  * TrainV1 : 1D model train with single foot
+  * TrainV2 : contrastive loss / gradient reversal try
+  * TrainV3 : contrastive loss with custom batches
+  * TrainV4 : 1D model with pairs of feet + contrastive loss + custom batches
+* Pred : from trained model to scores
+  * PredV1 : pred for 1D models which process 1 foot (merge embeding by averaging)
+  * PredV2 : pred for 1D models which process pairs of feet
+  * PredMax (TODO)
+* inception*.py : models
+
+
+# More details
+
 ## History
 
 | Submission | Score | Idea |
@@ -59,18 +96,6 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 048 | 9.64 | model 082 50, method maxime ??? |
 
 
-* normalization
-  * lognorm seems to work a little better than minmax
-* model selection
-  * last model seems to perform better than best model on validation
-  * 200 epoch seems to performe better than other when using contrastive loss
-* model architecture
-  * surprisingly, model with encoder architecture do not perform better than simple 1D model with flatten image input
-* loss
-  * triplet / unsupervised loss work best even when using random batches
-  * better batches improve performance a little
-
-
 ## Models
 
 | N°  | Architecture | Input shape      | BatchSize | Norm | More ? |
@@ -96,23 +121,15 @@ MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
 | 101 | Inception 1D | None, None, 6000 | 32        | log  | 082 with Gaussian filter on the input (sigma = 0.5) |
 | 102 | Inception 1D | None, None, 6000 | 32        | log  | 082 with Gaussian filter on the input (sigma = (0.1, 0.25, 0.25)) |
 
-### Next things
 
-Todo
-* 102
+## Notes
 
-Triplet loss can be like :
-* anchor Person_x, Shoe_y, Speed_z
-* positive Person_x, Shoe_?, speed_?
-* negative Person_?, Shoe_y, Speed_z
-This should force shoe and speed to be ignored.
-
-* Triplet like loss or unsupervised approach
-* force different person but same shoe like to be distant in embeding : use shoe class and speed as something to ignore in embeding
-* Classif pairs ?
-* Use ref in train ?
-* Check par candidat ++ ?
-
-### Uncertainty
-
-For submission 001 to 005, model should be best on the valid set but not sure 100% it was not the last epoch model.
+* normalization
+  * lognorm seems to work a little better than minmax
+* model selection
+  * last model seems to perform better than best model for probing
+  * 50 epochs seems like a sweet spot, especially for model 071 (or maybe a lucky train)
+* model architecture
+  * surprisingly, model with image encoder do not perform better than simple 1D model with flatten image input
+* loss
+  * contrastive loss with custom batches improve performances
