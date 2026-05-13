@@ -34,6 +34,10 @@ We are both member of the [MSD](https://msd-irimas.github.io/) team within the [
   * [PredV2](PredV2.ipynb) : prediction for 1D models which process pairs of feet
   * PredMax (TODO)
 * inception*.py : models
+  * [inception.py](inception.py) : inception model
+  * [inceptionembed.py](inceptionembed.py) : inception model + embeding output
+  * [inceptiongradreverse.py](inceptiongradreverse.py) : inception model + gradient reversal
+  * [inceptionviz.py](inceptionviz.py) : inception model + input in 2D CNN
 
 
 # More details
