@@ -15,6 +15,11 @@ We are both member of the [MSD](https://msd-irimas.github.io/) team within the [
 * PredMax (TODO)
 
 
+## Why so much stuff ?
+
+We think it might be interesting for other researchers to see our successes (and failures) on this challenge...
+
+
 ## Notebooks explained
 
 * [PrepData](PrepData.ipynb) : from original data to easy to load numpy array
