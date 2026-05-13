@@ -1,5 +1,5 @@
 # GaitUpStepUp
-MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition
+MC@MSD 2nd International StepUP Competition for Biometric Footstep Recognition.
 
 The team is composed of [Maxime Devanne](https://github.com/maxwell1503) and myself [Cyril Meyer](https://github.com/Cyril-Meyer).
 
@@ -8,16 +8,16 @@ We are both member of the [MSD](https://msd-irimas.github.io/) team within the [
 
 ## TLDR I want to see the best submission method only
 
-* PrepData
+* [PrepData](PrepData.ipynb)
   * use export 1 for image video preprocessing
   * export 4 `XId` dict is used during trainning for custom batches
-* TrainV4 with `X_AllStepsR_f32_norm` and concat on series channel
+* [TrainV4](TrainV4.ipynb) with `X_AllStepsR_f32_norm` and concat on series channel (V8 area) 
 * PredMax (TODO)
 
 
 ## Notebooks explained
 
-* PrepData : from original data to easy to load numpy array
+* [PrepData](PrepData.ipynb) : from original data to easy to load numpy array
   * Export 1 : export with log norm
   * Export 2 : export with minmax norm
   * Export 3 : 1 with metadata dictionary for custom batches
@@ -25,20 +25,62 @@ We are both member of the [MSD](https://msd-irimas.github.io/) team within the [
   * Export 5 : export with gaussian filter try 1
   * Export 6 : export with gaussian filter try 2
 * Train : train model
-  * TrainV1 : 1D model train with single foot
-  * TrainV2 : contrastive loss / gradient reversal try
-  * TrainV3 : contrastive loss with custom batches
-  * TrainV4 : 1D model with pairs of feet + contrastive loss + custom batches
+  * [TrainV1](TrainV1.ipynb) : 1D model train with single foot
+  * [TrainV2](TrainV2.ipynb) : contrastive loss / gradient reversal try
+  * [TrainV3](TrainV3.ipynb) : contrastive loss with custom batches
+  * [TrainV4](TrainV4.ipynb) : 1D model with pairs of feet + contrastive loss + custom batches
 * Pred : from trained model to scores
-  * PredV1 : pred for 1D models which process 1 foot (merge embeding by averaging)
-  * PredV2 : pred for 1D models which process pairs of feet
+  * [PredV1](PredV1.ipynb) : prediction for 1D models which process 1 foot (merge embedding by averaging)
+  * [PredV2](PredV2.ipynb) : prediction for 1D models which process pairs of feet
   * PredMax (TODO)
 * inception*.py : models
 
 
 # More details
 
+Almost everything we have done and try is documented.
+If something is missing, do not hesitate to contact us for more informations.
+
 ## History
+
+### Best submissions
+
+| Submission | Score | Idea |
+|:-|:-|:-|
+| 047 | **8.88** | model 082 50, method maxime 4 |
+| 037 | *9.20* | model 082 50, method 014 |
+| 049 | 9.18 | model 082 50, method maxime 4.1 |
+| 048 | 9.64 | model 082 50, method maxime ??? |
+| 036 | 10.16 | model 082 100, method 014 |
+| 043 | 10.44 | model 091 100, method 014 |
+
+### All submissions
+
+| Submission | Score | Idea |
+|:-|:-|:-|
+| 028-2 | bug | model 081 200, method 014, platform score bug |
+| 029 | 22.36 | model 081 200, method 014 but reverted foots |
+| 030 | 13.92 | model 081 200, method 014 but reverted foots 2nd version (flip footstep + also revert reference) |
+| 031 | 12.20 | model 081 150, method 014 |
+| 028-2 | 13.15 | model 081 200, method 014 |
+| 032 | 12.59 | maxime 1, model 071 : baseline distances |
+| 033 | 11.39 | maxime 2, model 071 : online distances |
+| 034 | 12.93 | maxime 3, model 071 : baseline full manifold distances |
+| 035 | 12.03 | model 082 150, method 014 |
+| 036 | 10.16 | model 082 100, method 014 |
+| 037 | *9.20* | model 082 50, method 014 |
+| 038 | 10.51 | maxime 4, model 071 + ??? |
+| 039 | 11.93 | maxime 5, model 071 + ??? |
+| 040 | 12.80 | model 072 200, method 014 |
+| 041 | 12.32 | maxime 6, model 071 + ??? |
+| 042 | 11.68 | model 091 50, method 014 |
+| 043 | 10.44 | model 091 100, method 014 |
+| 044 | 10.89 | model 101 50, method 014 |
+| 045 | 10.83 | model 101 25, method 014 |
+| 046 | 11.32 | model 102 50, method 014 |
+| 047 | **8.88** | model 082 50, method maxime 4 |
+| 048 | 9.64 | model 082 50, method maxime ??? |
+| 049 | 9.18 | model 082 50, method maxime 4.1 |
 
 | Submission | Score | Idea |
 |:-|:-|:-|
@@ -72,28 +114,6 @@ We are both member of the [MSD](https://msd-irimas.github.io/) team within the [
 | 026   | 11.53 | model 071 100, method 014 |
 | 027   | 12.31 | model 071 best, method 014 |
 | 028   | 47.36 | error in code |
-| 028-2 | bug | model 081 200, method 014, platform score bug |
-| 029 | 22.36 | model 081 200, method 014 but reverted foots |
-| 030 | 13.92 | model 081 200, method 014 but reverted foots 2nd version (flip footstep + also revert reference) |
-| 031 | 12.20 | model 081 150, method 014 |
-| 028-2 | 13.15 | model 081 200, method 014 |
-| 032 | 12.59 | maxime 1, model 071 : baseline distances |
-| 033 | 11.39 | maxime 2, model 071 : online distances |
-| 034 | 12.93 | maxime 3, model 071 : baseline full manifold distances |
-| 035 | 12.03 | model 082 150, method 014 |
-| 036 | 10.16 | model 082 100, method 014 |
-| 037 | *9.20* | model 082 50, method 014 |
-| 038 | 10.51 | maxime 4, model 071 + ??? |
-| 039 | 11.93 | maxime 5, model 071 + ??? |
-| 040 | 12.80 | model 072 200, method 014 |
-| 041 | 12.32 | maxime 6, model 071 + ??? |
-| 042 | 11.68 | model 091 50, method 014 |
-| 043 | 10.44 | model 091 100, method 014 |
-| 044 | 10.89 | model 101 50, method 014 |
-| 045 | 10.83 | model 101 25, method 014 |
-| 046 | 11.32 | model 102 50, method 014 |
-| 047 | **8.88** | model 082 50, method maxime 4 |
-| 048 | 9.64 | model 082 50, method maxime ??? |
 
 
 ## Models
